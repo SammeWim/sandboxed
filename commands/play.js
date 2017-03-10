@@ -47,7 +47,11 @@ exports.run = function(msg, args, Discord, client)
           embed.setFooter("Not playing? Check stats with >>stats");
 
           msg.channel.sendEmbed(embed)
-
+        
+        dispatcher.on("end", () =>{
+          voiceChannel.leave();
+        })
+        
       })
      .catch(console.error);
     });
