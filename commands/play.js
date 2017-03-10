@@ -27,7 +27,7 @@ exports.run = function(msg, args, Discord, client)
     var config = require("../config.json")
   var opts = {
     maxResults: 1,
-    key: config.yt;
+    key: config.yt
   };
 
     search(args.join(" "), opts, function(err, results) {
