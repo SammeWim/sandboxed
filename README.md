@@ -1,2 +1,2 @@
-# sandboxed
-DiscordBot based on Discord.js
+## sandboxed
+An Lightweight Discord bot, here to make changes!
