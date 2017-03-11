@@ -66,4 +66,6 @@ exports.run = function (msg, CommandArguments, Discord, client) {
            } else {
                  msg.reply("Sorry, but you dont have permissions! You need the 'sandboxed' role to access to moderation commands!")
               }
+            }
+          }
 };
