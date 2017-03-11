@@ -24,7 +24,7 @@ exports.run = function(msg, args, Discord, client)
   })
 
   }else{
-    var config = require("../config.json")
+    var config = require(".../config.json")
   var opts = {
     maxResults: 1,
     key: config.yt
@@ -47,7 +47,7 @@ exports.run = function(msg, args, Discord, client)
           embed.setFooter("Not playing? Check stats with >>stats");
 
           msg.channel.sendEmbed(embed)
-        
+
       })
      .catch(console.error);
     });
