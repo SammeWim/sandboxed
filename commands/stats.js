@@ -7,7 +7,7 @@ exports.run = function(message, CommandArguments,Discord, Client)
     Embed.setColor("#33CCCC");
 
     Embed.setTitle("sandboxed Stats:\n")
-    Embed.addField("Bot Stats", "Memory: "SysUtils.bytesToSize(usage.heapTotal, 3) + "\nUptime: " + SysUtils.getUptime(), true);
+    Embed.addField("Bot Stats", "Memory: " + SysUtils.bytesToSize(usage.heapTotal, 3) + "\nUptime: " + SysUtils.getUptime(), true);
     Embed.addField("Bot Guild Stats", "Guilds: " + Client.guilds.array().length + "\nChannels: " + Client.channels.array().length, true);
     Embed.addField("Lib", "Discord.JS " + Discord.version + ", Node.JS " + process.version + " and :heart:", true);
     Embed.addField("Voice Connections", Client.voiceConnections.array().length)
