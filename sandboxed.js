@@ -9,7 +9,7 @@ client.login(config.token);
 
 client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
-    client.user.setGame(">>help | " + client.guilds.array().length + " Guilds.");
+    client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
 })
 
 client.on("message", msg =>{
