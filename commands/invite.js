@@ -3,8 +3,8 @@ exports.run = function (msg, CommandArguments, Discord, client)
   let embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
 
-  embed.addField("Invite", "https://goo.gl/OsooWD", true);
-  embed.addField("Join Help Server!", "https://discord.gg/ypqHAd9", true)
+  embed.addField("Invite", "[Click Here!](https://discordapp.com/oauth2/authorize?client_id=279725066789322752&scope=bot&permissions=8198)", true);
+  embed.addField("Join Help Server!", "[Click Here!](https://discord.gg/ypqHAd9)", true)
 
   msg.channel.sendEmbed(embed);
 }
