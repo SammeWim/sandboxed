@@ -1,6 +1,6 @@
 exports.run = function(msg, CommandArguments, Discord, client)
 {
-  
+
   var embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
 
@@ -11,5 +11,5 @@ exports.run = function(msg, CommandArguments, Discord, client)
 
   embed.setFooter("sandboxed A.1vS , Coded by @lordjbs#3049");
 
-  message.channel.sendEmbed(embed)
+  msg.channel.sendEmbed(embed)
 }
