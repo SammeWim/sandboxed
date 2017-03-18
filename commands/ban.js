@@ -6,7 +6,7 @@ exports.run = function(msg, args, Discord, client)
   let modlog = msg.guild.channels.find("name", "mod-log")
 
 try{
-  if(msg.author.roles.has("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
+  if(msg.member.roles.has("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
   {
     if(reason.length < 1) return msg.reply("You need to add a reason!");
     if(msg.mentions.users.size < 1) return msg.reply("You need to mention the user you wanna ban!");
