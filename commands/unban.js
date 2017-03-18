@@ -10,10 +10,14 @@ exports.run = function(msg, args, Discord, client)
 
     if(!modlog)
     {
-        msg.guild.unban(user).catch( (e) => console.log(e))
+      msg.guild.unban(user).catch( (e) => {
+        msg.channel.sendMessage("An error happened! Do i got ban permission? Or is the user just not banned?")
+      })
               msg.channel.sendMessage(":ok_hand:")
     }else{
-        msg.guild.unban(user).catch( (e) => console.log(e))
+        msg.guild.unban(user).catch( (e) => {
+          msg.channel.sendMessage("An error happened! Do i got ban permission? Or is the user just not banned?")
+        })
       msg.channel.sendMessage(":ok_hand:")
 
       if(reason === null || reason === undefined)
