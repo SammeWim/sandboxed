@@ -4,7 +4,6 @@ exports.run = function(msg, args, Discord, client)
   let user = msg.mentions.users.first();
   let guild = msg.guild;
   let modlog = msg.guild.channels.find("name", "mod-log")
-
 try{
   if(msg.member.roles.has("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
   {
