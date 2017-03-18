@@ -8,7 +8,7 @@ exports.run = function(msg, args, Discord, client)
   {
     if(reason.length < 1) return msg.reply("You need to add a reason!");
     if(msg.mentions.users.size < 1) return msg.reply("You need to mention the user you wanna ban!");
-    if(msg.guild.member(user).bannable) return msg.reply("Sorry, but i cannot ban this user!");
+    if(!msg.guild.member(user).bannable) return msg.reply("Sorry, but i cannot ban this user!");
 
     user.sendMessage("You have been banned from " + guild.name + "! Reason: " + reason);
     msg.guild.ban(user, 2);
