@@ -11,7 +11,7 @@ client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
     client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
 })
-const prefixes = [">>", "sand, "];
+const prefixes = [">>", "sand, ", "sandboxed, ", "sand,", "sandboxed,"];
 client.on("message", msg =>{
     if(msg.content.includes(client.token))
     {
