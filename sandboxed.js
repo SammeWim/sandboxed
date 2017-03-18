@@ -11,13 +11,16 @@ client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
     client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
 })
-let prefix = ">>";
-
+const prefixes = [">>", "sand, "];
 client.on("message", msg =>{
     if(msg.content.includes(client.token))
     {
       msg.delete();
       msg.channel.sendMessage("Nice try, bitch.")
+    }
+    let prefix = false;
+    for(const thisPrefix of prefixes) {
+      if(msg.content.startsWith(thisPrefix)) prefix = thisPrefix;
     }
     if (msg.channel.type === 'dm') console.log(msg.author.username + " sended a dm: " + msg.content);
     var CommandArguments = msg.content.split(" ").slice(1);
