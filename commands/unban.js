@@ -4,7 +4,6 @@ exports.run = function(msg, args, Discord, client)
   let modlog = msg.guild.channels.find("name", "mod-log");
 
   let reason = args.join(" ").substring(user.length);
-try{
   if(msg.member.roles.find("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
   {
     if(!user) return msg.reply("You dont have supplied a user! Try something like a ID!")
@@ -12,15 +11,15 @@ try{
     if(!modlog)
     {
       try{
-      msg.guild.unban(user);
-      msg.channel.sendMessage(":ok_hand:")
+        msg.guild.unban(user).catch( (e) => console.log(e))
+              msg.channel.sendMessage(":ok_hand:")
     }catch(e)
     {
       msg.channel.sendMessage("Sorry, but a error happened. Do i have ban/unban permission?")
     }
     }else{
       try{
-      msg.guild.unban(user);
+        msg.guild.unban(user).catch( (e) => console.log(e))
       msg.channel.sendMessage(":ok_hand:")
 
       if(reason === null || reason === undefined)
@@ -42,8 +41,5 @@ try{
     }
     }
   }
-}catch(e)
-{
-  console.log(e);
-}
+
 }
