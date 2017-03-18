@@ -1,9 +1,10 @@
 exports.run = function(msg, args, Discord, client)
 {
-  let reason = args.join(" ");
+
   let user = msg.mentions.users.first();
   let guild = msg.guild;
   let modlog = msg.guild.channels.find("name", "mod-log")
+  let reason = args.join(" ").substring(user.length);
   if(msg.member.roles.find("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
   {
     if(reason.length < 1) return msg.reply("You need to add a reason!");
@@ -23,7 +24,7 @@ exports.run = function(msg, args, Discord, client)
         .setTimestamp()
         .addField('Action:', 'Ban')
         .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
-        .addField('Modrator:', `${msg.author.username}#${msg.author.discriminator}`)
+        .addField('Moderator:', `${msg.author.username}#${msg.author.discriminator}`)
         .addField('Reason', reason);
       return client.channels.get(modlog.id).sendEmbed(embed);
     }
