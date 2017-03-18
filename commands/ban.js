@@ -5,6 +5,7 @@ exports.run = function(msg, args, Discord, client)
   let guild = msg.guild;
   let modlog = msg.guild.channels.find("name", "mod-log")
 
+try{
   if(msg.author.roles.has("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
   {
     if(reason.length < 1) return msg.reply("You need to add a reason!");
@@ -28,6 +29,11 @@ exports.run = function(msg, args, Discord, client)
         .addField('Reason', reason);
       return client.channels.get(modlog.id).sendEmbed(embed);
     }
+
   }else{
   }
+}catch(e)
+{
+  console.log(e);
+}
 }
