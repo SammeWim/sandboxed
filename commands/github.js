@@ -1,5 +1,6 @@
 exports.run = function(msg, CommandArguments, Discord, client)
 {
+  
   var embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
 
