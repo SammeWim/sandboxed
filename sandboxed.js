@@ -97,3 +97,5 @@ client.on("guildCreate", () =>{
 process.on("unhandledRejection", err => {
   console.error(`Uncaught Promise Error: \n${err.stack}`);
 });
+
+exports.publicConfig = require("../config.json");

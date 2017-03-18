@@ -13,4 +13,5 @@ exports.run = function(message, CommandArguments,Discord, Client)
     Embed.addField("Voice Connections", Client.voiceConnections.array().length)
     Embed.setFooter("sandboxed A.1vS, Coded by @lordjbs#3049");
     message.channel.sendEmbed(Embed);
+    
 }
