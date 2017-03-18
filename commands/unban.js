@@ -10,15 +10,9 @@ exports.run = function(msg, args, Discord, client)
 
     if(!modlog)
     {
-      try{
         msg.guild.unban(user).catch( (e) => console.log(e))
               msg.channel.sendMessage(":ok_hand:")
-    }catch(e)
-    {
-      msg.channel.sendMessage("Sorry, but a error happened. Do i have ban/unban permission?")
-    }
     }else{
-      try{
         msg.guild.unban(user).catch( (e) => console.log(e))
       msg.channel.sendMessage(":ok_hand:")
 
@@ -35,11 +29,7 @@ exports.run = function(msg, args, Discord, client)
         .addField('Reason', reason);
       return client.channels.get(modlog.id).sendEmbed(embed);
     }
-    }catch(e)
-    {
-      msg.channel.sendMessage("Sorry, but a error happened. Do i have ban/unban permission?")
-    }
-    }
+
   }
 
 }
