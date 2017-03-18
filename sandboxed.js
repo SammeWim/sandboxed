@@ -11,10 +11,9 @@ client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
     client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
 })
+let prefix = ">>";
 
 client.on("message", msg =>{
-    let prefix = ">>";
-
     if(msg.content.includes(client.token))
     {
       msg.delete();
