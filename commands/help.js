@@ -4,10 +4,10 @@ exports.run = function(message, CommandArguments, Discord, client)
   embed.setColor("#33CCCC");
 
   embed.setTitle("Commands: ");
-  embed.addField("Bot", ">>ping\n>>stats\n>>invite", true);
+  embed.addField("Bot", ">>ping\n>>stats\n>>invite\n>>github", true);
   embed.addField("Fun", ">>talk\n>>gif\n>>cat\n>>yesorno", true);
   embed.addField("Music", ">>play\n>>stop", true);
-  embed.addField("Moderation", ">>purge", true);
+  embed.addField("Moderation", ">>purge\n>>ban\n>>unban\n>>kick", true);
 
   embed.setFooter("sandboxed A.1vS , Coded by @lordjbs#3049");
 
