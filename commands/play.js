@@ -8,7 +8,6 @@ exports.run = function(msg, args, Discord, client)
 
   var search = require('youtube-search');
 
-  console.log(args);
   if(args.includes("https"))
   {
     voiceChannel.join()
