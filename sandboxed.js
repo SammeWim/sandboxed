@@ -11,7 +11,7 @@ client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
     client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
 })
-const prefixes = [">>", "sand, ", "sandboxed, "];
+const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
 
   if(msg.content.includes(client.token))
@@ -26,15 +26,9 @@ client.on("message", msg =>{
     if(msg.content.startsWith(thisPrefix)) prefix = thisPrefix;
   }
   var command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
-  var CommandArguments;
 
-  if(prefix === prefixes[1] || prefix === prefixes[2])
-  {
-    var r = msg.content.split(" ").slice(1);
-    CommandArguments = r.substring(command.length);
-  }else{
-    CommandArguments = msg.content.split(" ").slice(1);
-  }
+  var CommandArguments;
+  CommandArguments = msg.content.split(" ").slice(1);
 
   if(!msg.content.startsWith(prefix)) return false;
 

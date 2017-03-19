@@ -10,7 +10,7 @@ exports.run = function(message, CommandArguments, Discord, client)
   embed.addField("Moderation", ">>purge\n>>ban\n>>unban\n>>kick", true);
 
 
-  embed.setFooter("Did you know you can use 'sandboxed, ' or 'sand, ' as prefix too? | sandboxed A.1vS , Coded by @lordjbs#3049");
+  embed.setFooter("sandboxed B.vS , Coded by @lordjbs#3049");
 
   message.channel.sendEmbed(embed)
 }
