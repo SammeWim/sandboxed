@@ -23,7 +23,14 @@ client.on("message", msg =>{
       if(msg.content.startsWith(thisPrefix)) prefix = thisPrefix;
     }
     if (msg.channel.type === 'dm') console.log(msg.author.username + " sended a dm: " + msg.content);
-    var CommandArguments = msg.content.split(" ").slice(1);
+    var CommandArguments;
+    if(prefix === prefixes[1] || prefix === prefixes[2])
+    {
+      var r = msg.content.split(" ").slice(1);
+      CommandArguments = r.substring(command.length);
+    }else{
+      CommandArguments = msg.content.split(" ").slice(1);
+    }
     var command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
     if(!msg.content.startsWith(prefix)) return false;
     if(command === "eval")
