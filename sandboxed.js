@@ -3,6 +3,8 @@ const config = require("../config.json");
 //Insert memes here :P
 const client = new Discord.Client();
 
+const configuration = require("./commands/BoatCFG/BoatCFG.json")
+
 let User = client.user;
 
 client.login(config.token);
