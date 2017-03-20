@@ -4,5 +4,5 @@ exports.log = function(LogMessage, msg, dClient)
 
   const debugChannel = dClient.guilds.get("288608465285545994").channels.get("292740811899273226");
 
-  debugChannel.sendMessage("DiscordDebug => " + LogMessage);
+  debugChannel.sendMessage("DiscordDebug => " + LogMessage).catch(() => console.error);
 }
