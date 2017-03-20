@@ -1,5 +1,5 @@
 const BoatCFGConfig = require("./BoatCFG.json");
-const DiscordDebug = require(".../DiscordDebug.js")
+const DiscordDebug = require("../CommandWrapper.js").sandboxed.DiscordDebug;
 
 exports.getBoatCFG = function(msg, client)
 {

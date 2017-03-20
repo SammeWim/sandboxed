@@ -9,3 +9,5 @@ exports.performed = function(msg, command, CommandArguments, Discord, client)
    //insert shrug here
  }
 }
+
+exports.sandboxed = require("../sandboxed.js");
