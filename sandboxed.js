@@ -106,6 +106,6 @@ process.on("unhandledRejection", err => {
 });
 
 exports.publicConfig = require("../config.json");
-exports.BoatCFG = require("./BoatCFG.js")
+exports.BoatCFG = require("./commands/BoatCFG/BoatCFG.js")
 
 //"if if if if if if"
