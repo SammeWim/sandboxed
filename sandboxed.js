@@ -104,9 +104,9 @@ function wat(msg)
 function update(dClient)
 {
   var statuses = [
-    "<3",
+    "❤",
     "Its getting recoded!"
-    "<3",
+    "❤",
     "We are on " + dClient.guilds.size + " Servers!",
     "❤ Avihay",
     "Beep. BEEEEP.",
