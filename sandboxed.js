@@ -6,6 +6,7 @@ const client = new Discord.Client();
 const configuration = require("./commands/BoatCFG/BoatCFG.json")
 
 let User = client.user;
+let Guilds = client.guilds.size;
 
 client.login(config.token);
 
@@ -106,7 +107,7 @@ function update(dClient)
     "❤",
     "Its getting recoded!",
     "<3",
-    "We are on " + dClient.guilds.size + " Servers!",
+    "We are on " + guilds + " Servers!",
     "❤ Avihay",
     "Beep. BEEEEP.",
     ">>help | Recoding"
