@@ -12,7 +12,7 @@ client.login(config.token).catch(console.error);
 
 client.on("ready", () =>{
   Guilds = client.guilds.size;
-  client.user.setGame(">>help | " + Guilds + "guilds. ❤", "https://www.twitch.tv/twitch");
+  client.user.setGame(">>help • " + Guilds + " guilds. ❤", "https://www.twitch.tv/twitch");
   console.log("sandboxed sucessfully started!");
 })
 
