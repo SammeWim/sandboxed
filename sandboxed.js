@@ -11,7 +11,6 @@ client.login(config.token);
 
 client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
-    client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
     update(client);
 })
 const prefixes = [">>", "s>>"];
@@ -133,6 +132,8 @@ function update(dClient)
     dClient.user.setGame(statuses[6])
   }else if(s === statuses[6])
   {
+    dClient.user.setGame(statuses[1])
+  }else{
     dClient.user.setGame(statuses[1])
   }
   setTimeout(update, 30000);
