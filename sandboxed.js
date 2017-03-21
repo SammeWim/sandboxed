@@ -12,7 +12,7 @@ client.login(config.token);
 
 client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
-    update(client);
+    update(client, guilds);
 })
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
@@ -101,13 +101,13 @@ function wat(msg)
 }
 
 
-function update(dClient)
+function update(dClient, guildz)
 {
   var statuses = [
     "❤",
     "Its getting recoded!",
     "<3",
-    "We are on " + guilds + " Servers!",
+    "We are on " + guildz + " Servers!",
     "❤ Avihay",
     "Beep. BEEEEP.",
     ">>help | Recoding"
