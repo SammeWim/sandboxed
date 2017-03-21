@@ -11,7 +11,7 @@ const timeoutUpdate = 60000;
 let User = client.user;
 let Guilds;
 
-client.login(config.token);
+client.login(config.token).catch(console.error);
 
 client.on("ready", () =>{
   client.user.setGame("Oops, something didn't went wrong", "https://www.twitch.tv/twitch");
