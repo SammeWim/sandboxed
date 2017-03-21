@@ -41,7 +41,7 @@ exports.run = function(msg, args, Discord, client)
 
         dispatcher.on("error", dError =>{
           console.log("Dispatcher Error: " + dError);
-        })
+        });
 
         var embed = new Discord.RichEmbed();
         embed.setColor("#33CCCC");
