@@ -12,7 +12,7 @@ client.login(config.token);
 
 client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
-    update(client, guilds);
+    update(client, Guilds);
 })
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
