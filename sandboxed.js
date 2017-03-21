@@ -11,7 +11,7 @@ let Guilds;
 client.login(config.token);
 
 client.on("ready", () =>{
-  client.user.setGame("Oops, something didn't went wrong", "https://twitch.tv/NoCopyrightSounds");
+  client.user.setGame("Oops, something didn't went wrong", "https://www.twitch.tv/twitch");
     console.log("sandboxed sucessfully started!");
      Guilds = client.guilds.size;
     update(client, Guilds);
@@ -117,7 +117,7 @@ function update(dClient, guildz)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  dClient.user.setGame(item, "https://twitch.tv/NoCopyrightSounds")
+  dClient.user.setGame(item, "https://www.twitch.tv/twitch")
 
   setTimeout(() => update(dClient, guildz), 30000);
 }
