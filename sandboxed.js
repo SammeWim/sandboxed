@@ -102,7 +102,7 @@ function wat(msg)
 }
 
 
-function update(dClient, guildz, Userr)
+function update(dClient, guildz, dClient)
 {
   var statuses = [
     "❤",
