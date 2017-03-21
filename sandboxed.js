@@ -105,8 +105,8 @@ function update(dClient)
 {
   var statuses = [
     "❤",
-    "Its getting recoded!"
-    "❤",
+    "Its getting recoded!",
+    "<3",
     "We are on " + dClient.guilds.size + " Servers!",
     "❤ Avihay",
     "Beep. BEEEEP.",
