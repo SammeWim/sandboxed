@@ -117,7 +117,7 @@ function update(dClient, guildz)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  dClient.user.setGame(statuses, "https://twitch.tv/mcjohncena")
+  dClient.user.setGame(item, "https://twitch.tv/mcjohncena")
 
   setTimeout(() => update(dClient, guildz), 30000);
 }
