@@ -11,6 +11,7 @@ let Guilds = client.guilds.size;
 client.login(config.token);
 
 client.on("ready", () =>{
+  client.user.setGame("❤");
     console.log("sandboxed sucessfully started!");
     update(client, Guilds);
 })
@@ -112,7 +113,6 @@ function update(dClient, guildz)
     "Beep. BEEEEP.",
     ">>help | Recoding"
   ]
-  if(!statuses.includes(dClient.user.presence.game.name)) return dClient.user.setGame(statuses[1]);
   var s = dClient.user.presence.game.name;
   if(s === statuses[0])
   {
