@@ -102,7 +102,7 @@ function wat(msg)
 }
 
 
-function update(dClient, guildz, dClient)
+function update(dClient, guildz)
 {
   var statuses = [
     "❤",
@@ -115,7 +115,7 @@ function update(dClient, guildz, dClient)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  Userr.setGame(statuses, "https://twitch.tv/mcjohncena")
+  dClient.user.setGame(statuses, "https://twitch.tv/mcjohncena")
 
   setTimeout(update, 30000);
 
