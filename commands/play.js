@@ -39,6 +39,10 @@ exports.run = function(msg, args, Discord, client)
         const stream = ytdl(results[0].link, {filter : 'audioonly'});
         const dispatcher = connection.playStream(stream, streamOptions);
 
+        dispatcher.on("error", dError =>{
+          console.log("Dispatcher Error: " + dError);
+        })
+
         var embed = new Discord.RichEmbed();
         embed.setColor("#33CCCC");
           embed.setTitle(":musical_note: Now Playing:");
