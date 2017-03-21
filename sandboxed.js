@@ -11,7 +11,7 @@ let Guilds;
 client.login(config.token);
 
 client.on("ready", () =>{
-  client.user.setGame("❤");
+  client.user.setGame("Oops, something didn't went wrong", "https://twitch.tv/mcjohncena");
     console.log("sandboxed sucessfully started!");
      Guilds = client.guilds.size;
     update(client, Guilds);
@@ -107,7 +107,7 @@ function wat(msg)
 function update(dClient, guildz)
 {
   var statuses = [
-    "❤",
+    "Bot ❤ you all",
     "Its getting recoded!",
     "<3",
     "We are on " + guildz + " Servers!",
@@ -117,7 +117,7 @@ function update(dClient, guildz)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  dClient.user.setGame(item)
+  dClient.user.setGame(item, "https://twitch.tv/mcjohncena")
 
   setTimeout(() => update(dClient, guildz), 30000);
 }
