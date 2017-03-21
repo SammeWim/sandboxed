@@ -11,11 +11,12 @@ let Guilds;
 client.login(config.token);
 
 client.on("ready", () =>{
-  client.user.setGame("❤", "https://twitch.tv/mcjohncena");
+  client.user.setGame("❤");
     console.log("sandboxed sucessfully started!");
      Guilds = client.guilds.size;
     update(client, Guilds);
 })
+
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
 
@@ -116,15 +117,10 @@ function update(dClient, guildz)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  dClient.user.setGame(statuses, "https://twitch.tv/mcjohncena")
+  dClient.user.setGame(statuses)
 
-  setTimeout(update, 30000);
-
+  setTimeout(() => update(dClient, guildz), 30000);
 }
-
-client.on("guildCreate", () =>{
-  client.user.setGame(">>help | " + client.guilds.array().length + " Guilds.");
-})
 
 process.on("unhandledRejection", err => {
   console.error(`Uncaught Promise Error: \n${err.stack}`);
