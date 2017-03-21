@@ -5,6 +5,9 @@ const client = new Discord.Client();
 
 const configuration = require("./commands/BoatCFG/BoatCFG.json")
 
+
+const timeoutUpdate = 60000;
+
 let User = client.user;
 let Guilds;
 
@@ -14,7 +17,7 @@ client.on("ready", () =>{
   client.user.setGame("Oops, something didn't went wrong", "https://www.twitch.tv/twitch");
     console.log("sandboxed sucessfully started!");
      Guilds = client.guilds.size;
-    update(client, Guilds);
+    update(client, Guilds, timeoutUpdate);
 })
 
 const prefixes = [">>", "s>>"];
@@ -104,7 +107,7 @@ function wat(msg)
 }
 
 
-function update(dClient, guildz)
+function update(dClient, guildz, timeoutt)
 {
   var statuses = [
     "Bot ❤ you all",
@@ -119,7 +122,7 @@ function update(dClient, guildz)
 
   dClient.user.setGame(item, "https://www.twitch.tv/twitch")
 
-  setTimeout(() => update(dClient, guildz), 30000);
+  setTimeout(() => update(dClient, guildz), timeoutt);
 }
 
 process.on("unhandledRejection", err => {
