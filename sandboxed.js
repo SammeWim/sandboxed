@@ -11,7 +11,7 @@ let Guilds;
 client.login(config.token);
 
 client.on("ready", () =>{
-  client.user.setGame("❤");
+  client.user.setGame("❤","https://twitch.tv/mcjohncena");
     console.log("sandboxed sucessfully started!");
      Guilds = client.guilds.size;
     update(client, Guilds);
@@ -117,7 +117,7 @@ function update(dClient, guildz)
   ]
   var item = statuses[Math.floor(Math.random()*statuses.length)];
 
-  dClient.user.setGame(statuses)
+  dClient.user.setGame(statuses, "https://twitch.tv/mcjohncena")
 
   setTimeout(() => update(dClient, guildz), 30000);
 }
