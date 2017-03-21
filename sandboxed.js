@@ -12,6 +12,7 @@ client.login(config.token);
 client.on("ready", () =>{
     console.log("sandboxed sucessfully started!");
     client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
+    update(client);
 })
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
@@ -97,6 +98,45 @@ function reboot()
 function wat(msg)
 {
   return msg.channel.sendMessage("https://media.giphy.com/media/1L5YuA6wpKkNO/giphy.gif");
+}
+
+
+function update(dClient)
+{
+  var statuses = [
+    "<3",
+    "Its getting recoded!"
+    "<3",
+    "We are on " + dClient.guilds.size + " Servers!",
+    "❤ Avihay",
+    "Beep. BEEEEP.",
+    ">>help | Recoding"
+  ]
+  var s = dClient.user.presence.game.name;
+  if(s === statuses[0])
+  {
+    dClient.user.setGame(statuses[1])
+  }else if(s === statuses[1])
+  {
+    dClient.user.setGame(statuses[2])
+  }else if(s === statuses[2])
+  {
+    dClient.user.setGame(statuses[3])
+  }else if(s === statuses[3])
+  {
+    dClient.user.setGame(statuses[4])
+  }else if(s === statuses[4])
+  {
+    dClient.user.setGame(statuses[5])
+  }else if(s === statuses[5])
+  {
+    dClient.user.setGame(statuses[6])
+  }else if(s === statuses[6])
+  {
+    dClient.user.setGame(statuses[1])
+  }
+  setTimeout(update, 30000);
+
 }
 
 client.on("guildCreate", () =>{
