@@ -6,14 +6,15 @@ const client = new Discord.Client();
 const configuration = require("./commands/BoatCFG/BoatCFG.json")
 
 let User = client.user;
-let Guilds = client.guilds.size;
+let Guilds;
 
 client.login(config.token);
 
 client.on("ready", () =>{
   client.user.setGame("❤", "https://twitch.tv/mcjohncena");
     console.log("sandboxed sucessfully started!");
-    update(client, Guilds, User);
+     Guilds = client.guilds.size;
+    update(client, Guilds);
 })
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
