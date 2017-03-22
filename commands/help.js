@@ -4,15 +4,13 @@ exports.run = function(message, CommandArguments, Discord, client)
   embedM.setColor("#33CCCC");
   embedM.setTitle("I've send you my Help!")
   message.channel.sendEmbed(embedM);
-  var user = message.author.id;
-
   var embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
 
   embed.setTitle("sandboxed");
 
   embed.setDescription("Hey! Thank you for using sandboxed! Here are my Commands:");
-  embed.addField("Commands: ", "", true);
+  embed.addField("Commands: ", "^-^", true);
   embed.addField("Bot [2]", ">>ping: Showes the ping of the Bot\n>>stats: Showes the Statistics of the bot!", true);
   embed.addField("Misc [2]", ">>github: Gives a info for sandboxed's Github\n>>invite: WHOA! You wanna add me?!")
   embed.addField("Fun [4]", "@sandboxed#9142 [message] - Talk with cleverbot!\n>>gif [query] - Searches after a gif on giphy.com\n>>cat - Gives you a random Cat picture.\n>>yesorno - Says Yes or No. Very easy.", true);
@@ -22,5 +20,6 @@ exports.run = function(message, CommandArguments, Discord, client)
 
   embed.setFooter("sandboxed vS , Coded by @lordjbs#3049");
 
+  var user = message.author.id;
   client.users.get(user).sendEmbed(embed)
 }
