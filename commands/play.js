@@ -26,7 +26,7 @@ exports.run = function(msg, args, Discord, client)
   }else{
   var opts = {
     maxResults: 1,
-    key: require("../sandboxed.js").publicConfig.yt
+    key: require("../sandboxed.js").config.yt
   };
 
     search(args.join(" "), opts, function(err, results) {
