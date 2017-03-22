@@ -12,7 +12,7 @@ client.login(ClientConfig.token);
 client.on("ready", () => {
   Utils.logger.Log("Starting bot...");
 
-  client.user.setGame("beep..");
+  client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤");
 
   Utils.logger.Log("Started sandboxed!");
 });
