@@ -12,7 +12,7 @@ client.login(ClientConfig.token);
 client.on("ready", () => {
   Utils.logger.Log("Starting bot...");
 
-  client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤");
+  client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤", "https://twitch.tv/twitch");
 
   Utils.logger.Log("Started sandboxed!");
 });
@@ -64,7 +64,7 @@ client.on("message", msg => {
                   msg.delete();
                   msg.channel.sendMessage("Nice try, bitch.");
               }
-              console.log("Evaled " + CommandArguments.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
+              console.log("Evaled " + msgArguments.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
           } catch (e) {
               var embed = new Discord.RichEmbed();
               embed.setTitle("sandboxed - eval - ERROR");
@@ -81,6 +81,20 @@ client.on("message", msg => {
     return false;
   }
 });
+
+client.on("error", e => {
+  console.log("Error: " + e);
+});
+
+client.on("warn", e => {
+  console.log("Warn: " + e);
+});
+
+client.on("guildCreate", guild => {
+  client.users.get("220591718158827520").sendMessage("Joined " + guild.name + " owner: " + guild.owner.displayName + " (" + guild.owner.id + ")");
+  client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤", "https://twitch.tv/twitch");
+})
+
 
 exports.config = ClientConfig;
 exports.bsConfig = BaseConfig;
