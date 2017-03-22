@@ -31,14 +31,9 @@ exports.run = function (msg, CommandArguments, Discord, client) {
   }
   }else{
   let role = msg.guild.roles.find("name", "sandboxed")
-  if (!role) {
-      msg.channel.sendMessage("Err!");
-  } else {
-       if (msg.member.roles.has(role.id)) {
-         const user = msg.mentions.users.first();
+       if (msg.member.roles.has(role.id) || msg.author.id === msg.guild.owner.id) {
          let amount = parseInt(msg.content.split(' ').pop());
        try{
-         if (!user && !amount) return msg.reply('Syntax: [mention or amount] [amount]');
          if (!amount) return msg.reply('Specify an amount');
 
          if (user) {

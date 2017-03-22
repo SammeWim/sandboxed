@@ -5,7 +5,7 @@ exports.run = function(msg, args, Discord, client)
   let guild = msg.guild;
   let modlog = msg.guild.channels.find("name", "mod-log")
   let reason = args.join(" ").substring(user.length);
-  if(msg.member.roles.find("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
+  if(msg.member.roles.find("name", "sandboxed") || msg.author.id === msg.guild.owner.id)
   {
     if(reason.length < 1) return msg.reply("You need to add a reason!");
     if(msg.mentions.users.size < 1) return msg.reply("You need to mention the user you wanna ban!");
@@ -32,5 +32,6 @@ exports.run = function(msg, args, Discord, client)
     }
 
   }else{
+    msg.reply("Sorry, but you dont have permissions! You need the 'sandboxed' role to access to moderation commands!")
   }
 }

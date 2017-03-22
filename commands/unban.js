@@ -4,7 +4,7 @@ exports.run = function(msg, args, Discord, client)
   let modlog = msg.guild.channels.find("name", "mod-log");
 
   let reason = args.join(" ").substring(user.length);
-  if(msg.member.roles.find("name", "Moderator") || msg.author.id !== msg.guild.owner.id)
+  if(msg.member.roles.find("name", "sandboxed") || msg.author.id === msg.guild.owner.id)
   {
     if(!user) return msg.reply("You dont have supplied a user! Try something like a ID!")
 
@@ -34,6 +34,8 @@ exports.run = function(msg, args, Discord, client)
       return client.channels.get(modlog.id).sendEmbed(embed);
     }
 
+  }else{
+    msg.reply("Sorry, but you dont have permissions! You need the 'sandboxed' role to access to moderation commands!")
   }
 
 }
