@@ -6,13 +6,16 @@ const client = new Discord.Client();
 const configuration = require("./commands/BoatCFG/BoatCFG.json")
 
 let User = client.user;
+let Guilds;
 
-client.login(config.token);
+client.login(config.token).catch(console.error);
 
 client.on("ready", () =>{
-    console.log("sandboxed sucessfully started!");
-    client.user.setGame(">>help | " + client.guilds.size + " Guilds.");
+  Guilds = client.guilds.size;
+  client.user.setGame(">>help • " + Guilds + " guilds. ❤", "https://www.twitch.tv/twitch");
+  console.log("sandboxed sucessfully started!");
 })
+
 const prefixes = [">>", "s>>"];
 client.on("message", msg =>{
 
@@ -98,10 +101,6 @@ function wat(msg)
 {
   return msg.channel.sendMessage("https://media.giphy.com/media/1L5YuA6wpKkNO/giphy.gif");
 }
-
-client.on("guildCreate", () =>{
-  client.user.setGame(">>help | " + client.guilds.array().length + " Guilds.");
-})
 
 process.on("unhandledRejection", err => {
   console.error(`Uncaught Promise Error: \n${err.stack}`);
