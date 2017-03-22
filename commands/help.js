@@ -4,7 +4,7 @@ exports.run = function(message, CommandArguments, Discord, client)
   embedM.setColor("#33CCCC");
   embedM.setTitle("I've send you my Help!")
   message.channel.sendEmbed(embedM);
-  var user = message.author;
+  var user = message.author.id;
 
   var embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
@@ -22,5 +22,5 @@ exports.run = function(message, CommandArguments, Discord, client)
 
   embed.setFooter("sandboxed vS , Coded by @lordjbs#3049");
 
-  user.sendEmbed(embed)
+  client.users.get(user).sendEmbed(embed)
 }
