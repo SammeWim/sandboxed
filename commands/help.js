@@ -19,6 +19,5 @@ exports.run = function(message, CommandArguments, Discord, client)
 
   embed.setFooter("sandboxed vS , Coded by @lordjbs#3049");
 
-  var user = message.author.id;
-  client.users.get(user).sendEmbed(embed)
+  message.author.sendEmbed(embed)
 }
