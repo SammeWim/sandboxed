@@ -1,4 +1,4 @@
-exports.evaluating = function(msg, Code, Discord, client)
+exports.evaluating = function(msg, Code, Discord, client, args)
 {
   if (typeof Code !== 'string')
       Code = require('util').inspect(Code, {
@@ -17,7 +17,7 @@ exports.evaluating = function(msg, Code, Discord, client)
       msg.delete();
       msg.channel.sendMessage("Nice try, bitch.");
   }
-  console.log("Evaled " + msgArguments.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
+  console.log("Evaled " + args.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
 }
 
 exports.evaluateerror = function(msg, e, Discord, client)
@@ -28,4 +28,5 @@ exports.evaluateerror = function(msg, e, Discord, client)
   embed.setDescription("```js\n" + e + "```");
   embed.setFooter("sandboxed - developed by lordjbs#3049");
   msg.channel.sendEmbed(embed);
+  console.log("Evaled " + args.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
 }
