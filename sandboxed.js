@@ -43,10 +43,10 @@ client.on("message", msg => {
       } else {
           try {
               var Code = eval(msgArguments.join(" "));
-              require("./commands/intern/evalutil.js").evaluating(msg, Code, Discord, client, args);
+              require("./commands/intern/evalutil.js").evaluating(msg, Code, Discord, client, CommandArguments);
               delete require.cache[require.resolve(`./commands/intern/evalutil.js`)]
           } catch (e) {
-            require("./commands/intern/evalutil.js").evaluateerror(msg, e, Discord, client);
+            require("./commands/intern/evalutil.js").evaluateerror(msg, e, Discord, client, CommandArguments);
             delete require.cache[require.resolve(`./commands/intern/evalutil.js`)]
           }
       }
