@@ -23,7 +23,7 @@ client.on("message", msg => {
   let msgArguments = msg.content.split(" ").slice(1);
   let command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
 
-  if(msg.content.startsWith("@sandboxed#9142H") && !msg.mentions.users.size < 1)
+  if(msg.content.startsWith("@sandboxed#9142") && !msg.mentions.users.size < 1)
   {
     if(msg.mentions.users.first().id === client.user.id){
       require("./mCommands/cleverbot.js").run(msg, msgArguments, Discord, client);
