@@ -20,7 +20,7 @@ exports.evaluating = function(msg, Code, Discord, client, args)
   console.log("Evaled " + args.join(" ") + "! Asked by " + msg.author.username + "! Code/Usage: " + Code);
 }
 
-exports.evaluateerror = function(msg, e, Discord, client, args)
+exports.evaluateerror = function(msg, e, Discord, client, args, Code)
 {
   var embed = new Discord.RichEmbed();
   embed.setTitle("sandboxed - eval - ERROR");

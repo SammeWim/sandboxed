@@ -46,7 +46,7 @@ client.on("message", msg => {
               require("./commands/intern/evalutil.js").evaluating(msg, Code, Discord, client, msgArguments);
               delete require.cache[require.resolve(`./commands/intern/evalutil.js`)]
           } catch (e) {
-            require("./commands/intern/evalutil.js").evaluateerror(msg, e, Discord, client, msgArguments);
+            require("./commands/intern/evalutil.js").evaluateerror(msg, e, Discord, client, msgArguments, Code);
             delete require.cache[require.resolve(`./commands/intern/evalutil.js`)]
           }
       }
