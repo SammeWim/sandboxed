@@ -1,10 +1,11 @@
+/*eslint linebreak-style: ["error", "windows"]*/
 exports.run = function(msg, CommandArguments, Discord, client)
 {
-    var Embed = new Discord.RichEmbed();
-    Embed.setColor("#33CCCC");
+  var Embed = new Discord.RichEmbed();
+  Embed.setColor("#33CCCC");
 
-    Embed.setTitle("Ping,");
-    Embed.setDescription(":ping_pong: Pong! " + client.ping);
+  Embed.setTitle("Ping,");
+  Embed.setDescription(":ping_pong: Pong! " + client.ping);
 
-    msg.channel.sendEmbed(Embed);
-}
+  msg.channel.sendEmbed(Embed);
+};

@@ -1,33 +1,35 @@
 const ytdl = require("ytdl-core");
 
-exports.run = function(msg, args, Discord, client)
+exports.run = function(msg, args, Discord)
 {
   const streamOptions = { seek: 0, volume: 1 };
 
   var voiceChannel = msg.member.voiceChannel;
 
-  var search = require('youtube-search');
+  var search = require("youtube-search");
 
   if(args.includes("https"))
   {
     voiceChannel.join()
     .then(connection => {
-    const stream = ytdl(args[0], {filter : 'audioonly'});
-    const dispatcher = connection.playStream(stream, streamOptions);
-    var embed = new Discord.RichEmbed();
-    embed.setColor("#33CCCC");
-    embed.setTitle(":musical_note: Now Playing:");
-    embed.setDescription("unable to load!");
-    embed.setFooter("Not playing? Check stats with >>stats");
+      const stream = ytdl(args[0], {filter : "audioonly"});
+      const dispatcher = connection.playStream(stream, streamOptions);
+      var embed = new Discord.RichEmbed();
+      embed.setColor("#33CCCC");
+      embed.setTitle(":musical_note: Now Playing:");
+      embed.setDescription("unable to load!");
+      embed.setFooter("Not playing? Check stats with >>stats");
 
-    msg.channel.sendEmbed(embed)
-  })
+      msg.channel.sendEmbed(embed);
+
+      dispatcher.on("error", e => {console.log(e);});
+    });
 
   }else{
-  var opts = {
-    maxResults: 1,
-    key: require("../sandboxed.js").config.yt
-  };
+    var opts = {
+      maxResults: 1,
+      key: require("../sandboxed.js").config.yt
+    };
 
     search(args.join(" "), opts, function(err, results) {
       if(err) return console.log(err);
@@ -35,8 +37,7 @@ exports.run = function(msg, args, Discord, client)
       voiceChannel.join()
       .then(connection => {
 
-        var player = results + "";
-        const stream = ytdl(results[0].link, {filter : 'audioonly'});
+        const stream = ytdl(results[0].link, {filter : "audioonly"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
         dispatcher.on("error", dError =>{
@@ -45,14 +46,14 @@ exports.run = function(msg, args, Discord, client)
 
         var embed = new Discord.RichEmbed();
         embed.setColor("#33CCCC");
-          embed.setTitle(":musical_note: Now Playing:");
-          embed.setDescription(results[0].title);
-          embed.setFooter("Not playing? Check stats with >>stats");
+        embed.setTitle(":musical_note: Now Playing:");
+        embed.setDescription(results[0].title);
+        embed.setFooter("Not playing? Check stats with >>stats");
 
-          msg.channel.sendEmbed(embed)
+        msg.channel.sendEmbed(embed);
 
       })
      .catch(console.error);
     });
   }
-}
+};

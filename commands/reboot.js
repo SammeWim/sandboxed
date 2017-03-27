@@ -1,4 +1,4 @@
-exports.run = function(msg, CommandArguments, Discord, client)
+exports.run = function(msg)
 {
   try{
     if(msg.author.id === "220591718158827520")
@@ -11,7 +11,7 @@ exports.run = function(msg, CommandArguments, Discord, client)
     }
   }catch(e)
   {
-    msg.reply("error")
-    console.log(e)
+    msg.reply("error");
+    console.log(e);
   }
-}
+};

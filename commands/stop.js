@@ -1,4 +1,4 @@
-exports.run = function (msg, CommandArguments, Discord, client)
+exports.run = function (msg)
 {
   var voiceChannel = msg.member.voiceChannel;
 
@@ -7,6 +7,6 @@ exports.run = function (msg, CommandArguments, Discord, client)
     msg.channel.sendMessage("I left the voicechannel!");
   }catch(e)
   {
-    msg.channel.sendMessage("ERROR: im not connected to any voicechannel")
+    msg.channel.sendMessage("ERROR: im not connected to any voicechannel");
   }
-}
+};
