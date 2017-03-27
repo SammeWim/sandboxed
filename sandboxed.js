@@ -5,7 +5,7 @@ const ClientConfig = require("../config.json")
 const BaseConfig = require("./configs/bConfig.json");
 const Utils = require("./utils/utils.js");
 
-const prefix = ">>";
+const prefix = "b>>";
 
 client.login(ClientConfig.token);
 
