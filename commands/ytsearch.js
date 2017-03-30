@@ -15,8 +15,8 @@ exports.run = function(msg, CommandArguments, Discord)
     let embed = new Discord.RichEmbed();
 
     embed.setTitle("Youtube Search:");
-    embed.addField("Video", "[" + results[0].title + "](" + results[0].link + ")", true);
     embed.setThumbnail(results[0].thumbnails.default);
+    embed.addField("Video", "[" + results[0].title + "](" + results[0].link + ")", true);
     embed.addField("Channel", "[" + results[0].channelTitle + "](https://youtube.com/channel/" + results[0].channelId + ")", true);
     msg.channel.sendEmbed(embed);
   });
