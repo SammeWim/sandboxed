@@ -6,12 +6,7 @@ exports.run = function(msg, args, Discord)
   try{
     /*eslint-disable no-unused-vars*/
     require("child_process").exec(argsExecute, (e, stdout, stderr) => {
-      let embed = new Discord.RichEmbed();
-      embed.setColor("#33CCCC");
-      embed.setTitle("sandboxed - eval");
-      embed.setDescription("```js\n" + stdout + "```");
-      embed.setFooter("sandboxed - developed by lordjbs#3049");
-      msg.channel.sendEmbed(embed);
+      msg.channel.sendMessage(stdout);
     });
   }catch(e)
   {
