@@ -11,7 +11,7 @@ exports.run = function(msg, args, Discord)
       embed.setTitle("sandboxed - eval");
       embed.setDescription("```js\n" + stdout + "```");
       embed.setFooter("sandboxed - developed by lordjbs#3049");
-      msg.edit("", { embed });
+      msg.channel.sendEmbed(embed);
     });
   }catch(e)
   {
@@ -20,6 +20,6 @@ exports.run = function(msg, args, Discord)
     embed.setTitle("sandboxed - exec - error");
     embed.setDescription("```js\n" + e + "```");
     embed.setFooter("sandboxed - developed by lordjbs#3049");
-    msg.edit("", { embed });
+    msg.channel.sendEmbed(embed);
   }
 };
