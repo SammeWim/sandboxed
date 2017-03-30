@@ -1,10 +1,8 @@
 exports.performed = function(msg, command, CommandArguments, Discord, client)
 {
   try{
-    var cmd = require(`./${command}.js`);
-    cmd.run(msg, CommandArguments, Discord, client).then( () => {
-      delete require.cache[require.resolve(`./${command}.js`)];
-    });
+    delete require.cache[require.resolve(`./${command}.js`)];
+    require(`./${command}.js`).run(msg, CommandArguments, Discord, client);
   }catch(e)
   {
    //nothing lel

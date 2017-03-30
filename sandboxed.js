@@ -23,6 +23,8 @@ client.on("message", msg => {
   let msgArguments = msg.content.split(" ").slice(1);
   let command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
 
+  delete require.cache[require.resolve("./commands/CommandWrapper.js")];
+
   require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
 });
 
