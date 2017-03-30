@@ -23,39 +23,7 @@ client.on("message", msg => {
   let msgArguments = msg.content.split(" ").slice(1);
   let command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
 
-  if(!msg.mentions.users.size < 1)
-  {
-    if(msg.mentions.users.first().id === client.user.id){
-      require("./mCommands/cleverbot.js").run(msg, msgArguments);
-    }
-  }
-
-  if(msg.content.startsWith(prefix))
-  {
-    if(command === "eval")
-    {
-      var permitted = [
-        "220591718158827520"
-      ];
-      if (!permitted.includes(msg.author.id)) {
-        console.log(msg.author + " was trying to perform eval in " + msg.guild + "!");
-        msg.reply(":x: You are not permitted to use this Command!");
-      } else {
-        try {
-          var Code = eval(msgArguments.join(" "));
-          require("./commands/intern/evalutil.js").evaluating(msg, Code, Discord, client, msgArguments);
-          delete require.cache[require.resolve("./commands/intern/evalutil.js")];
-        } catch (e) {
-          require("./commands/intern/evalutil.js").evaluateerror(msg, e, Discord, client, msgArguments, Code);
-          delete require.cache[require.resolve("./commands/intern/evalutil.js")];
-        }
-      }
-    }else{
-      return require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
-    }
-  }else{
-    return false;
-  }
+  require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
 });
 
 client.on("error", e => {
@@ -70,7 +38,6 @@ client.on("guildCreate", guild => {
   client.users.get("220591718158827520").sendMessage("Joined " + guild.name + " owner: " + guild.owner.displayName + " (" + guild.owner.id + ")");
   client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤", "https://twitch.tv/twitch");
 });
-
 
 exports.config = ClientConfig;
 exports.bsConfig = BaseConfig;
