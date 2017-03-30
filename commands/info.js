@@ -38,6 +38,8 @@ exports.run = function(msg, CommandArguments, Discord, client)
       {
         msg.channel.sendMessage("A error happened. Ya know?");
       }
+    }else{
+      msg.channel.sendMessage("Wuuut?! You need this syntax `id <name>` `invite <id>` `server <id>`");
     }
   }catch(e)
   {

@@ -36,7 +36,6 @@ exports.run = function(msg, args, Discord)
 
       voiceChannel.join()
       .then(connection => {
-
         const stream = ytdl(results[0].link, {filter : "audioonly"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
