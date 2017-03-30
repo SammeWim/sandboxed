@@ -1,6 +1,8 @@
-exports.run = function(msg, args, Discord)
+exports.run = function(msg, Discord)
 {
-  let argsExecute = args.join(" ");
+  let argsExecutee = msg.content.split(" ").slice(1);
+
+  let argsExecute = argsExecutee.join(" ").substring(5);
 
   if(msg.author.id !== "220591718158827520") return msg.channel.sendMessage(":x: You are not permitted to use this Command!");
   try{
