@@ -4,7 +4,6 @@ exports.run = function(msg, args, Discord)
 
   if(msg.author.id !== "220591718158827520") return msg.channel.sendMessage(":x: You are not permitted to use this Command!");
   try{
-    msg.channel.sendMessage("Please wait..");
     /*eslint-disable no-unused-vars*/
     require("child_process").exec(argsExecute, (e, stdout, stderr) => {
       let embed = new Discord.RichEmbed();
