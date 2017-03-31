@@ -20,17 +20,13 @@ client.on("ready", () => {
 client.on("message", msg => {
 
   if (msg.author.bot) return false;
+  if(!msg.content.startsWith(prefix)) return false;
   let msgArguments = msg.content.split(" ").slice(1);
   let command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
 
   delete require.cache[require.resolve("./commands/CommandWrapper.js")];
 
-  if(command === "ugh")
-  {
-    msg.channel.sendMessage("yeah.");
-  }else{
-    require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
-  }
+  require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
 });
 
 client.on("error", e => {
