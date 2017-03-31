@@ -25,7 +25,12 @@ client.on("message", msg => {
 
   delete require.cache[require.resolve("./commands/CommandWrapper.js")];
 
-  require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
+  if(command === "ugh")
+  {
+    msg.channel.sendMessage("yeah.");
+  }else{
+    require("./commands/CommandWrapper.js").performed(msg, command, msgArguments, Discord, client);
+  }
 });
 
 client.on("error", e => {
