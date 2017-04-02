@@ -2,7 +2,7 @@ exports.run = function(message, CommandArguments, Discord)
 {
   var embedM = new Discord.RichEmbed();
   embedM.setColor("#33CCCC");
-  embedM.setTitle("I've send you my Help!");
+  embedM.setTitle("Help is coming!");
   message.channel.sendEmbed(embedM);
   var embed = new Discord.RichEmbed();
   embed.setColor("#33CCCC");
