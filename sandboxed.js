@@ -14,6 +14,10 @@ client.on("ready", () => {
 
   client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤", "https://twitch.tv/twitch");
 
+
+  client.guilds.forEach(queue => {
+
+  }
   Utils.logger.Log("Started sandboxed!");
 });
 

@@ -8,24 +8,6 @@ exports.run = function(msg, args, Discord)
 
   var search = require("youtube-search");
 
-  if(args.includes("https"))
-  {
-    voiceChannel.join()
-    .then(connection => {
-      const stream = ytdl(args[0], {filter : "audioonly"});
-      const dispatcher = connection.playStream(stream, streamOptions);
-      var embed = new Discord.RichEmbed();
-      embed.setColor("#33CCCC");
-      embed.setTitle(":musical_note: Now Playing:");
-      embed.setDescription("unable to load!");
-      embed.setFooter("Not playing? Check stats with >>stats");
-
-      msg.channel.sendEmbed(embed);
-
-      dispatcher.on("error", e => {console.log(e);});
-    });
-
-  }else{
     var opts = {
       maxResults: 1,
       key: require("../sandboxed.js").config.yt
@@ -39,6 +21,10 @@ exports.run = function(msg, args, Discord)
         const stream = ytdl(results[0].link, {filter : "audioonly"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
+        dispatcher.on("end", () => {
+          cool[msg.guild.id].sandboxedqueue.splice(0, 1);
+          if(cool[msg.guild.id].sandboxedqueue.length >= 1) return run(msg, args, Discord);
+        })
         dispatcher.on("error", dError =>{
           console.log("Dispatcher Error: " + dError);
         });
@@ -54,5 +40,4 @@ exports.run = function(msg, args, Discord)
       })
      .catch(console.error);
     });
-  }
 };
