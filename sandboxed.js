@@ -16,8 +16,9 @@ client.on("ready", () => {
 
 
   client.guilds.forEach(queue => {
-
-  }
+    cool[queue.id] = {
+      "sandboxedqueue" : []}
+  });
   Utils.logger.Log("Started sandboxed!");
 });
 
