@@ -6,6 +6,7 @@ exports.run = function(msg, args, Discord)
 
   var voiceChannel = msg.member.voiceChannel;
 
+  var cool = require("../sandboxed.js").cool;
   var search = require("youtube-search");
 
     var opts = {

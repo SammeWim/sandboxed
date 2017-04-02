@@ -7,6 +7,8 @@ const Utils = require("./utils/utils.js");
 
 const prefix = ">>";
 
+let cool = exports.cool = [];
+
 client.login(ClientConfig.token);
 
 client.on("ready", () => {
