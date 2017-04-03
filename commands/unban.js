@@ -6,18 +6,18 @@ exports.run = function(msg, args, Discord, client)
   let reason = args.join(" ").substring(user.length);
   if(msg.member.roles.find("name", "sandboxed") || msg.author.id === msg.guild.owner.id)
   {
-    if(!user) return msg.reply("You dont have supplied a user! Try something like a ID!");
+    if(!user) return msg.reply("You haven't supplied a user! Try something like an ID!");
 
     if(!modlog)
     {
       msg.guild.unban(user).catch( (e) => {
-        msg.channel.sendMessage("An error happened! Do i got ban permission? Or is the user just not banned?");
+        msg.channel.sendMessage("An error ocurred! Do i have ban permissions? Or is the user just not banned?");
         console.log(e);
       });
       msg.channel.sendMessage(":ok_hand:");
     }else{
       msg.guild.unban(user).catch( (e) => {
-        msg.channel.sendMessage("An error happened! Do i got ban permission? Or is the user just not banned?");
+        msg.channel.sendMessage("An error ocurred! Do i have ban permissions? Or is the user just not banned?");
         console.log(e);
       });
       msg.channel.sendMessage(":ok_hand:");
@@ -37,6 +37,6 @@ exports.run = function(msg, args, Discord, client)
     }
 
   }else{
-    msg.reply("Sorry, but you dont have permissions! You need the 'sandboxed' role to access to moderation commands!");
+    msg.reply("Sorry, but you dont have permissions! You need the 'sandboxed' role to access moderation commands!");
   }
 };
