@@ -18,7 +18,7 @@ let tagurls = exports.tagurls = [
 ]
 
 exports.run = function(msg)
-{
+{//k
   try{
   let args = msg.content.split(" ").slice(1);
   if(args[0] === "comeandfight")
