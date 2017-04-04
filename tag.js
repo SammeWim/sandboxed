@@ -55,6 +55,6 @@ exports.run = async function(msg)
   }
 }catch(e)
 {
-  msg.channel.sendMessage("err: ```js\n" + e + "```")
+  msg.channel.sendMessage("err: ```js\n" + e + "```+")
 }
 }
