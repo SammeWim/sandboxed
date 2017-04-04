@@ -21,29 +21,29 @@ exports.run = async function(msg)
 {
   try{
   let args = msg.content.split(" ").slice(1);
-  if(args[0] === tags[0].toLowerCase())
+  if(args[0] === tags[0])
   {
     let send = await msg.channel.sendMessage("Uploading...");
     send.delete()
     await msg.channel.sendFile(tagurls[0]);
-  }else if(args[0] === tags[1].toLowerCase())
+  }else if(args[0] === tags[1])
   {
     let send = await msg.channel.sendMessage("Uploading...");
     send.delete()
     await msg.channel.sendFile(tagurls[1]);
-  }else if(args[0] === tags[2].toLowerCase())
+  }else if(args[0] === tags[2])
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[3].toLowerCase())
+  }else if(args[0] === tags[3])
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[4].toLowerCase())
+  }else if(args[0] === tags[4])
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[5].toLowerCase())
+  }else if(args[0] === tags[5])
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[6].toLowerCase())
+  }else if(args[0] === tags[6])
   {
     await msg.channel.sendMessage(tagurls[2])
   }else{
