@@ -18,6 +18,7 @@ exports.run = function(msg, args, Discord)
 
       voiceChannel.join()
       .then(connection => {
+        msg.delete();
         const stream = ytdl(results[0].link, {filter : "audioonly", quality : "highest"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
@@ -31,7 +32,7 @@ exports.run = function(msg, args, Discord)
         embed.setDescription(results[0].title);
         embed.setFooter("Not playing? Check stats with >>stats");
 
-        msg.edit(embed, {embed});
+        msg.channel.sendEmbed(embed);
 
       })
      .catch(console.error);
