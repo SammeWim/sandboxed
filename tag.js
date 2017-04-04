@@ -17,10 +17,9 @@ let tagurls = exports.tagurls = [
   '¯\\_(ツ)_/¯',//6
 ]
 
-exports.run = function(msg)
+exports.run = function(msg, args)
 {//k
   try{
-  let args = msg.content.split(" ").slice(1);
   if(args[0] === "comeandfight")
   {
      msg.channel.sendFile(tagurls[0]);
