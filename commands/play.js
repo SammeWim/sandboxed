@@ -12,13 +12,12 @@ exports.run = function(msg, args, Discord)
       maxResults: 1,
       key: require("../sandboxed.js").config.yt
     };
-    msg.channel.sendMessage("Downloading..");
+    msg.channel.sendMessage("Downloading.. Please wait!").then(m => {
     search(args.join(" "), opts, function(err, results) {
       if(err) return console.log(err);
 
       voiceChannel.join()
       .then(connection => {
-        msg.delete();
         const stream = ytdl(results[0].link, {filter : "audioonly", quality : "highest"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
@@ -32,9 +31,10 @@ exports.run = function(msg, args, Discord)
         embed.setDescription(results[0].title);
         embed.setFooter("Not playing? Check stats with >>stats");
 
-        msg.channel.sendEmbed(embed);
+        m.edit(" ", {embed});
 
       })
      .catch(console.error);
     });
+  });
 };
