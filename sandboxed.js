@@ -7,8 +7,6 @@ const Utils = require("./utils/utils.js");
 
 const prefix = ">>";
 
-let cool = exports.cool = [];
-
 client.login(ClientConfig.token);
 
 client.on("ready", () => {
@@ -16,11 +14,6 @@ client.on("ready", () => {
 
   client.user.setGame(">>help • " + client.guilds.size + " guilds. ❤", "https://twitch.tv/twitch");
 
-
-  client.guilds.forEach(queue => {
-    cool[queue.id] = {
-      "sandboxedqueue" : []}
-  });
   Utils.logger.Log("Started sandboxed!");
 });
 

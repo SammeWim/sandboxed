@@ -6,7 +6,6 @@ exports.run = function(msg, args, Discord)
 
   var voiceChannel = msg.member.voiceChannel;
 
-  var cool = require("../sandboxed.js").cool;
   var search = require("youtube-search");
 
     var opts = {
@@ -22,10 +21,6 @@ exports.run = function(msg, args, Discord)
         const stream = ytdl(results[0].link, {filter : "audioonly"});
         const dispatcher = connection.playStream(stream, streamOptions);
 
-        dispatcher.on("end", () => {
-          cool[msg.guild.id].sandboxedqueue.splice(0, 1);
-          if(cool[msg.guild.id].sandboxedqueue.length >= 1) return run(msg, args, Discord);
-        })
         dispatcher.on("error", dError =>{
           console.log("Dispatcher Error: " + dError);
         });
