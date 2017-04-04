@@ -17,7 +17,7 @@ let tagurls = exports.tagurls = [
   '¯\\_(ツ)_/¯',//6
 ]
 
-exports.run = async function (msg)
+exports.run = async function(msg)
 {
   let args = msg.content.split(" ").slice(1);
   if(args[0] === tags[0].toLowerCase())
