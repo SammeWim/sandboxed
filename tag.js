@@ -21,26 +21,26 @@ exports.run = async function(msg)
 {
   try{
   let args = msg.content.split(" ").slice(1);
-  if(args[0] === tags[0])
+  if(args[0] === "comeandfight")
   {
     let send = await msg.channel.sendMessage("Uploading...");
     send.delete()
     await msg.channel.sendFile(tagurls[0]);
-  }else if(args[0] === tags[1])
+  }else if(args[0] === "shesaid")
   {
     let send = await msg.channel.sendMessage("Uploading...");
     send.delete()
     await msg.channel.sendFile(tagurls[1]);
-  }else if(args[0] === tags[2])
+  }else if(args[0] === "lenny")
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[3])
+  }else if(args[0] === "fight")
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[4])
+  }else if(args[0] === "tableflip")
   {
     await msg.channel.sendMessage(tagurls[2])
-  }else if(args[0] === tags[5])
+  }else if(args[0] === "shrug")
   {
     await msg.channel.sendMessage(tagurls[2])
   }else if(args[0] === tags[6])
