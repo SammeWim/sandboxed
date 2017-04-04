@@ -19,6 +19,7 @@ let tagurls = exports.tagurls = [
 
 exports.run = async function(msg)
 {
+  try{
   let args = msg.content.split(" ").slice(1);
   if(args[0] === tags[0].toLowerCase())
   {
@@ -52,4 +53,8 @@ exports.run = async function(msg)
     .addField("Tags: ", tags.join(", "), true)
   )
   }
+}catch(e)
+{
+  msg.channel.sendMessage("err: ```js\n" + e + "```")
+}
 }
