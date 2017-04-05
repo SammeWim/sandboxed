@@ -15,7 +15,7 @@ let tagurls = exports.tagurls = [
   "(ง'̀-'́)ง",//4
   "(╯°□°）╯︵ ┻━┻",//5
   '¯\\_(ツ)_/¯',//6
-]
+];
 
 exports.run = function(msg, args)
 {//k
