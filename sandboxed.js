@@ -20,7 +20,7 @@ client.on("ready", () => {
 client.on("message", msg => {
 
   if (msg.author.bot) return false;
-  if(!msg.content.startsWith(prefix)) return false;
+  if (!msg.content.startsWith(prefix)) return false;
   let msgArguments = msg.content.split(" ").slice(1);
   let command = msg.content.substring(prefix.length).toLowerCase().split(" ")[0];
 
@@ -32,7 +32,6 @@ client.on("message", msg => {
 client.on("error", e => {
   console.log("Error: " + e);
 });
-
 client.on("warn", e => {
   console.log("Warn: " + e);
 });

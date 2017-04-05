@@ -1,48 +1,19 @@
-exports.run = function(msg, CommandArguments, Discord, client)
-{
-  try{
-    if(msg.author.id !== "220591718158827520") return msg.channel.sendMessage(":x: You are not permitted to use this Command!");
-    console.log("workin");
-    if(CommandArguments[0].toLowerCase() === "server")
-    {
-      if(CommandArguments[1].length < 1) return msg.channel.sendMessage("Wut? You'll need the id, ya know?");
-      let guild = client.guilds.get(CommandArguments[1]);
-      let users = guild.members.size;
-      let bots = guild.members.filter(x => x.user.bot).map(x => x.user.username).length;
-      let owner = guild.owner.displayName + " ( " + guild.owner.id + ")";
-      let name = guild.name + " (" + guild.id + ")";
+let clientvars = require("../utils/clientvars.js");
+let variables = [
+    clientvars.guilds,
+    clientvars.channels,
+    clientvars.users,
+    clientvars.commandusage
+];
 
-      let embed = new Discord.RichEmbed();
-      embed.setTitle("Guild info: ");
-      embed.addField("Name: ", name, true);
-      embed.addField("Users: ", users, true);
-      embed.addField("Bots: ", bots,true);
-      embed.addField("Owner: ", owner,true);
-      embed.setFooter(name , guild.iconURL);
-
-      msg.channel.sendEmbed(embed);
-    }else if(CommandArguments[0].toLowerCase() === "invite")
-    {
-      if(CommandArguments[1].length < 1) return msg.channel.sendMessage("Wut? You'll need the id, ya know?");
-      let guild = client.guilds.get(CommandArguments[1]);
-      guild.defaultChannel.createInvite().then(invite =>
-      msg.channel.sendMessage("http://discord.gg/" + invite.code));
-      msg.delete(5000);
-    }else if(CommandArguments[0].toLowerCase() === "id")
-    {
-      if(CommandArguments[1].length < 1) return msg.channel.sendMessage("Wut? You'll need tha name, ya know?");
-      let name = CommandArguments[1];
-      try{
-        msg.channel.sendMessage("ID: " + client.guilds.find("name", name).id);
-      }catch(e)
-      {
-        msg.channel.sendMessage("A error happened. Ya know?");
-      }
-    }else{
-      msg.channel.sendMessage("Wuuut?! You need this syntax `id <name>` `invite <id>` `server <id>`");
-    }
-  }catch(e)
-  {
-    console.log(e);
-  }
-};
+exports.run = async function(msg, args, Discord, client)
+{/*
+    await msg.channel.sendEmbed(new Discord.RichEmbed()
+    .setTitle("sandboxed")
+    .setThumbnail(client.user.avatarURL)
+    .addField("Bot", "Heya! I am sandboxed, an bot, coded in the libary discord.js.\nMy backend is completely coded by lordjbs#3049, that also maintains this bot.", true)
+    .addField("Bots stats: ", "**Guilds:** " + variables[0] + "(Channels: " + variables[1] + "\n**Users:** " + variables[2] + "\n**Commands used in this Session:** " + variables[3], true)
+    .setFooter("Developed by lordjbs#3049 | Copyright (C) 2016-2017 by lordjbs.")
+    )*/
+    await msg.reply("In development (like new things)")
+}
